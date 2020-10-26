@@ -1,1 +1,37 @@
-<p>form works!</p>
+<form [formGroup]="form">
+  <div>
+    <label for="firstName">First Name</label>
+    <input formControlName="firstName" id="firstName" />
+    <span
+      *ngIf="
+        controls.lastName.touched && controls.firstName.hasError('required')
+      "
+      class="errors"
+    >
+      Field is required
+    </span>
+  </div>
+
+  <div>
+    <label for="lastName">First Name</label>
+    <input formControlName="lastName" id="lastName" />
+    <span
+      *ngIf="
+        controls.lastName.touched && controls.lastName.hasError('required')
+      "
+      class="errors"
+    >
+      Field is required
+    </span>
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input formControlName="age" id="age" />
+    <span
+      *ngIf="controls.age.touched && controls.age.hasError('required')"
+      class="errors"
+    >
+      Field is required
+    </span>
+  </div>
+</form>

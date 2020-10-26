@@ -8,9 +8,15 @@ import { FormComponent } from './pages/form/form.component';
 
 import { SharedModule } from '../../shared/shared.module';
 import { FormExampleComponent } from './form-example/form-example.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, ExamplesRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    ExamplesRoutingModule,
+    ReactiveFormsModule,
+  ],
   declarations: [
     PostsContainerComponent,
     PostComponent,
