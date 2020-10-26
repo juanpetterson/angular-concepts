@@ -1,0 +1,7 @@
+<input (input)="handleSearch($event)" />
+<p *ngIf="isLoading">Loading ...</p>
+<ul>
+  <li *ngFor="let product of products$ | async">
+    {{ product.name }}, {{ product.price }}
+  </li>
+</ul>
