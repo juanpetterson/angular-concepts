@@ -1,0 +1,24 @@
+<form class="form" [formGroup]="form">
+  <div class="form" formArrayName="rows">
+    <div
+      class="form__row"
+      *ngFor="let control of rowsArray.controls; let i = index"
+    >
+      <div class="form__fields" [formGroupName]="i">
+        <div class="form__field">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name" />
+        </div>
+        <div class="form__field">
+          <label for="age">Age</label>
+          <input id="age" type="text" formControlName="age" />
+        </div>
+        <span>{{ control.getError("duplicatedValue") }}</span>
+      </div>
+      <div class="form__buttons">
+        <button class="form__button" (click)="addRow()">Add</button>
+        <button class="form__button" (click)="removeRow(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+</form>
